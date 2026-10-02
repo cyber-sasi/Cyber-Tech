@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Tech | Learn. Detect. Protect.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cyber-bg"></div>
+    
+    
+    <header id="main-header">
+        <nav class="navbar">
+            <!-- LEFT: Brand -->
+            <a href="#home" class="nav-brand" style="text-decoration:none;">
+                <div class="logo-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">◈ CYBER<span>-TECH</span></div>
+                    <div class="logo-subtitle">SECURITY AWARENESS</div>
+                </div>
+            </a>
+
+            <!-- CENTER: Connected Nav Rail -->
+            <nav class="nav-rail" aria-label="Main navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home"      class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#threats"   class="nav-link" data-section="threats">Threats</a></li>
+                    <li><a href="#tools"     class="nav-link" data-section="tools">Tools</a></li>
+                    <li><a href="#phishing"  class="nav-link" data-section="phishing">Awareness</a></li>
+                    <li><a href="#quiz"      class="nav-link" data-section="quiz">Quiz</a></li>
+                    <li><a href="#checklist" class="nav-link" data-section="checklist">Checklist</a></li>
+                    <li><a href="#roadmap"   class="nav-link" data-section="roadmap">Roadmap</a></li>
+                </ul>
+            </nav>
+
+            <!-- RIGHT: Status + Hamburger -->
+            <div class="nav-controls">
+                <div class="nav-status-badge" title="Cyber-Tech educational platform is online" role="status" aria-label="Platform status: online">
+                    <span class="nav-status-dot"></span>
+                    <span class="nav-status-text">PLATFORM ONLINE</span>
+                </div>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay hidden">
+        <div class="search-modal glass-panel">
+            <div class="search-header">
+                <span class="search-icon">⌕</span>
+                <input type="text" id="search-input" placeholder="Search Cyber-Tech..." autocomplete="off">
+                <span id="close-search" class="close-search">ESC</span>
+            </div>
+            <div class="search-results" id="search-results">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- 3. HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>CYBER<span>-TECH</span></h1>
+                <h2>Learn. Detect. Protect.</h2>
+                <p>An interactive cybersecurity platform designed to help you understand cyber threats, improve security awareness, and build safer digital habits.</p>
+                <div class="hero-buttons">
+                    <a href="#threats" class="btn primary-btn">Explore Threats</a>
+                    <a href="#quiz" class="btn secondary-btn">Test Your Knowledge</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="cyber-shield-graphic" aria-label="Cyber-Tech security shield graphic" role="img">
+                    <svg viewBox="0 0 100 100" class="shield-svg" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer shield outline -->
+                        <path d="M50 5 L90 20 L90 50 C90 75 50 95 50 95 C50 95 10 75 10 50 L10 20 Z"
+                              fill="rgba(0,229,255,0.04)" stroke="var(--primary)" stroke-width="1.5" />
+                        <!-- Inner shield dashed ring -->
+                        <path d="M50 14 L82 27 L82 50 C82 70 50 86 50 86 C50 86 18 70 18 50 L18 27 Z"
+                              fill="none" stroke="rgba(0,255,136,0.25)" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+                        <!-- Circuit node points (static) -->
+                        <circle class="node" cx="50" cy="25" r="2.5" fill="rgba(0,229,255,0.3)" data-y="25"/>
+                        <circle class="node" cx="35" cy="40" r="2"   fill="rgba(0,229,255,0.3)" data-y="40"/>
+                        <circle class="node" cx="65" cy="40" r="2"   fill="rgba(0,229,255,0.3)" data-y="40"/>
+                        <circle class="node" cx="50" cy="55" r="2.5" fill="rgba(0,229,255,0.3)" data-y="55"/>
+                        <circle class="node" cx="38" cy="68" r="1.8" fill="rgba(0,229,255,0.3)" data-y="68"/>
+                        <circle class="node" cx="62" cy="68" r="1.8" fill="rgba(0,229,255,0.3)" data-y="68"/>
+
+                        <!-- Connector lines between nodes -->
+                        <line x1="50" y1="25" x2="35" y2="40" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+                        <line x1="50" y1="25" x2="65" y2="40" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+                        <line x1="35" y1="40" x2="50" y2="55" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+                        <line x1="65" y1="40" x2="50" y2="55" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+                        <line x1="50" y1="55" x2="38" y2="68" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+                        <line x1="50" y1="55" x2="62" y2="68" stroke="rgba(0,229,255,0.15)" stroke-width="0.6"/>
+
+                        <!-- Scan line: animated via CSS, clipped inside shield -->
+                        <clipPath id="shield-clip">
+                            <path d="M50 5 L90 20 L90 50 C90 75 50 95 50 95 C50 95 10 75 10 50 L10 20 Z"/>
+                        </clipPath>
+                        <g clip-path="url(#shield-clip)">
+                            <line class="scan-line" x1="10" y1="0" x2="90" y2="0"
+                                  stroke="var(--primary)" stroke-width="1"
+                                  opacity="0.7"/>
+                        </g>
+                    </svg>
+                    <div class="graphic-text">
+                        <h3>CYBER-TECH</h3>
+                        <p>SECURITY AWARENESS</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- WHAT IS CYBER-TECH -->
+        <section id="about-home" class="about-home section-padding">
+            <div class="about-home-header">
+                <h2 class="section-title">What is Cyber-Tech?</h2>
+                <p class="about-intro">Cyber-Tech is an interactive cybersecurity learning and awareness platform designed to help users understand cyber threats, practice safer digital habits, and explore cybersecurity concepts through interactive tools and simulations.</p>
+                <div class="platform-label">CYBERSECURITY AWARENESS PLATFORM</div>
+            </div>
+            <div class="about-home-cards">
+                <div class="ah-card glass-panel">
+                    <div class="ah-icon">🧠</div>
+                    <h3>LEARN</h3>
+                    <p>Understand cybersecurity concepts and common threats.</p>
+                </div>
+                <div class="ah-card glass-panel">
+                    <div class="ah-icon">🔍</div>
+                    <h3>DETECT</h3>
+                    <p>Recognize suspicious activity, phishing attempts, and security risks.</p>
+                </div>
+                <div class="ah-card glass-panel">
+                    <div class="ah-icon">🛡️</div>
+                    <h3>PROTECT</h3>
+                    <p>Build safer digital habits and learn practical security practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CYBERSECURITY MATTERS -->
+        <section id="why-cyber" class="why-cyber section-padding">
+            <h2 class="section-title">Why Cybersecurity Matters</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">👤</div>
+                    <div class="why-text">
+                        <h4>IDENTITY</h4>
+                        <p>Protect personal and account information.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">📂</div>
+                    <div class="why-text">
+                        <h4>DATA</h4>
+                        <p>Reduce the risk of data loss and unauthorized access.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">👁️</div>
+                    <div class="why-text">
+                        <h4>AWARENESS</h4>
+                        <p>Recognize common digital threats before becoming a victim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECURITY STATUS DASHBOARD -->
+        <section id="dashboard" class="dashboard">
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <h3>Threat Categories</h3>
+                    <p class="stat-number" id="stat-threats">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Security Tools</h3>
+                    <p class="stat-number" id="stat-tools">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Quiz Questions</h3>
+                    <p class="stat-number" id="stat-quiz">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Security Checklist</h3>
+                    <p class="stat-number" id="stat-checklist">0</p>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span> SYSTEM STATUS: <span class="secure-text">SECURE</span>
+            </div>
+        </section>
+
+        <!-- 5. CYBER THREATS SECTION -->
+        <section id="threats" class="threats section-padding">
+            <h2 class="section-title">Understand Cyber Threats</h2>
+            <div class="threat-grid" id="threat-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Threat Modal -->
+        <div id="threat-modal" class="modal">
+            <div class="modal-content glass-panel">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <span id="modal-icon" class="modal-icon"></span>
+                    <h3 id="modal-title">Threat Title</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section">
+                        <h4>What is it?</h4>
+                        <p id="modal-what"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>How does it work?</h4>
+                        <p id="modal-how"></p>
+                    </div>
+                    <div class="modal-section warning">
+                        <h4>Warning signs</h4>
+                        <ul id="modal-signs"></ul>
+                    </div>
+                    <div class="modal-section prevention">
+                        <h4>How to prevent it</h4>
+                        <ul id="modal-prevent"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. CYBER TOOLS SECTION -->
+        <section id="tools" class="tools section-padding">
+            <h2 class="section-title">Cyber Tools</h2>
+            <div class="tools-grid">
+                
+                <!-- Password Strength Checker -->
+                <div class="tool-card glass-panel">
+                    <h3>Password Strength Checker</h3>
+                    <input type="password" id="pw-check-input" class="cyber-input" placeholder="Enter password...">
+                    <div class="pw-strength-bar-container">
+                        <div id="pw-strength-fill"></div>
+                    </div>
+                    <p id="pw-strength-text">Strength: <span class="neutral">Unknown</span></p>
+                    <ul class="pw-criteria">
+                        <li id="crit-length" class="invalid">Length (8+)</li>
+                        <li id="crit-upper" class="invalid">Uppercase</li>
+                        <li id="crit-lower" class="invalid">Lowercase</li>
+                        <li id="crit-number" class="invalid">Number</li>
+                        <li id="crit-special" class="invalid">Special Char</li>
+                    </ul>
+                </div>
+
+                <!-- Password Generator -->
+                <div class="tool-card glass-panel">
+                    <h3>Password Generator</h3>
+                    <div class="input-group">
+                        <input type="text" id="pw-gen-result" class="cyber-input" readonly placeholder="Generated Password">
+                        <button id="pw-copy-btn" class="btn secondary-btn">Copy</button>
+                    </div>
+                    <div class="pw-gen-options">
+                        <div class="range-group">
+                            <label>Length: <span id="pw-len-val">16</span></label>
+                            <input type="range" id="pw-len-slider" min="8" max="64" value="16">
+                        </div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="pw-opt-upper" checked> A-Z</label>
+                            <label><input type="checkbox" id="pw-opt-lower" checked> a-z</label>
+                            <label><input type="checkbox" id="pw-opt-numbers" checked> 0-9</label>
+                            <label><input type="checkbox" id="pw-opt-symbols" checked> !@#$</label>
+                        </div>
+                    </div>
+                    <button id="pw-gen-btn" class="btn primary-btn full-width">Generate Password</button>
+                </div>
+
+                <!-- SHA-256 Hash Generator -->
+                <div class="tool-card glass-panel">
+                    <h3>SHA-256 Hash Generator</h3>
+                    <textarea id="hash-input" class="cyber-input" placeholder="Enter text to hash..."></textarea>
+                    <div class="input-group">
+                        <input type="text" id="hash-result" class="cyber-input" readonly placeholder="Hash result">
+                        <button id="hash-copy-btn" class="btn secondary-btn">Copy</button>
+                    </div>
+                    <button id="hash-gen-btn" class="btn primary-btn full-width mt-2">Generate Hash</button>
+                </div>
+
+                <!-- URL Safety Checker -->
+                <div class="tool-card glass-panel">
+                    <h3>URL Safety Checker</h3>
+                    <p class="tool-disclaimer">Educational heuristic tool. Not a real malware detector.</p>
+                    <input type="text" id="url-input" class="cyber-input" placeholder="e.g., https://example.com">
+                    <button id="url-check-btn" class="btn primary-btn full-width mt-2">Check URL</button>
+                    <div id="url-result-box" class="result-box hidden mt-2">
+                        <h4 id="url-risk-level"></h4>
+                        <ul id="url-indicators"></ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. PHISHING AWARENESS SIMULATOR -->
+        <section id="phishing" class="phishing section-padding">
+            <h2 class="section-title">Can You Spot the Phish?</h2>
+            <div class="simulator-container glass-panel">
+                <div id="phishing-active-area">
+                    <div class="phishing-email" id="phishing-email-box">
+                        <div class="email-header">
+                            <p><strong>From:</strong> <span id="phish-sender"></span></p>
+                            <p><strong>Subject:</strong> <span id="phish-subject"></span></p>
+                        </div>
+                        <div class="email-body" id="phish-body"></div>
+                    </div>
+                    
+                    <div class="phishing-actions" id="phishing-actions">
+                        <button id="btn-phishing" class="btn danger-btn">PHISHING</button>
+                        <button id="btn-legit" class="btn success-btn">LEGITIMATE</button>
+                    </div>
+
+                    <div id="phishing-feedback" class="feedback-box hidden">
+                        <h3 id="phishing-result-title"></h3>
+                        <p id="phishing-explanation"></p>
+                        <h4>Suspicious Indicators:</h4>
+                        <ul id="phishing-indicators"></ul>
+                        <button id="btn-next-phish" class="btn primary-btn mt-2">Next Scenario</button>
+                    </div>
+                </div>
+
+                <div id="phishing-end-area" class="end-area hidden">
+                    <h3>Simulator Complete!</h3>
+                    <div class="final-score">
+                        <span id="phishing-final-score">0</span> / 5
+                    </div>
+                    <button id="btn-restart-phish" class="btn primary-btn mt-2">Restart Simulator</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CYBERSECURITY QUIZ -->
+        <section id="quiz" class="quiz section-padding">
+            <h2 class="section-title">Cybersecurity Quiz</h2>
+            <div class="quiz-container glass-panel">
+                <div id="quiz-active-area">
+                    <div class="quiz-header">
+                        <span id="quiz-progress-text">Question 1 of 10</span>
+                        <div class="progress-track"><div id="quiz-progress-fill" class="progress-fill"></div></div>
+                    </div>
+                    
+                    <h3 id="quiz-question" class="quiz-question">Question text?</h3>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options generated dynamically -->
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button id="btn-quiz-prev" class="btn secondary-btn" disabled>Previous</button>
+                        <button id="btn-quiz-next" class="btn primary-btn" disabled>Next</button>
+                    </div>
+                </div>
+
+                <div id="quiz-end-area" class="end-area hidden">
+                    <h3>Your Cybersecurity Score</h3>
+                    <div class="final-score">
+                        <span id="quiz-final-score">0</span> / 10
+                    </div>
+                    <p id="quiz-feedback-msg" class="feedback-msg"></p>
+                    <button id="btn-quiz-restart" class="btn primary-btn mt-2">Restart Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. SECURITY CHECKLIST -->
+        <section id="checklist" class="checklist section-padding">
+            <h2 class="section-title">Secure Your Digital Life</h2>
+            <div class="checklist-container glass-panel">
+                <div class="checklist-header">
+                    <h3>Security Progress: <span id="checklist-percent">0</span>%</h3>
+                    <div class="progress-track"><div id="checklist-progress-fill" class="progress-fill"></div></div>
+                </div>
+                <div class="checklist-items" id="checklist-items">
+                    <!-- Populated by JS -->
+                </div>
+                <button id="btn-reset-checklist" class="btn secondary-btn mt-2">Reset Checklist</button>
+            </div>
+        </section>
+
+        <!-- 10. CYBERSECURITY LEARNING ROADMAP -->
+        <section id="roadmap" class="roadmap section-padding">
+            <h2 class="section-title">Learning Roadmap</h2>
+            <div class="roadmap-timeline" id="roadmap-timeline">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- 11. SECURITY AWARENESS SCORE -->
+        <section id="score-dashboard" class="score-dashboard section-padding">
+            <h2 class="section-title">Your Awareness Profile</h2>
+            <div class="score-card glass-panel">
+                <div class="circular-progress" id="circular-score">
+                    <div class="inner-circle">
+                        <span id="score-value">0%</span>
+                    </div>
+                </div>
+                <div class="score-details">
+                    <h3>Security Awareness Score</h3>
+                    <p>This dynamic score is calculated based on your performance in the Phishing Simulator, Cyber Quiz, and Security Checklist completion.</p>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    
+    <!-- PROFESSIONAL FOOTER -->
+    <footer class="minimal-footer">
+        <div class="footer-divider"></div>
+        <div class="footer-top">
+            <div class="footer-brand-minimal">
+                <div class="logo-title">◈ CYBER<span>-TECH</span></div>
+                <div class="footer-tagline">Learn. Detect. Protect.</div>
+                <p class="footer-desc-minimal">Interactive Cybersecurity<br>Learning & Awareness Platform</p>
+            </div>
+            <div class="footer-links-minimal">
+                <a href="https://github.com/placeholder" target="_blank">[ GitHub ]</a>
+                <a href="#">[ Security ]</a>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <div class="fb-left">
+                &copy; 2026 Cyber-Tech<br>
+                <span>Educational Cybersecurity Project</span>
+            </div>
+            <div class="fb-right">
+                <span class="status-dot animated-dot"></span>
+                PLATFORM ONLINE
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
